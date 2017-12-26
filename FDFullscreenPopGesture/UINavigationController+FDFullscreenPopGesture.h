@@ -20,6 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+/******************************************
+ 
+*   更新
+*
+*   UINavigationController+FDFullscreenPopGesture用来实现侧滑，
+*   UINavigationController+SafeTransition用来防止出现can`t add self as subview
+*
+*   但是两者在一起的时候，就会出问题，因为对同一个类的同一方法进行了交换，所以将两者整合到一起
+*
+ 
+*******************************************/
+
 #import <UIKit/UIKit.h>
 
 /// "UINavigation+FDFullscreenPopGesture" extends UINavigationController's swipe-
@@ -54,9 +66,5 @@
 /// checked when view controller based navigation bar's appearance is enabled.
 /// Default to NO, bars are more likely to show.
 @property (nonatomic, assign) BOOL fd_prefersNavigationBarHidden;
-
-/// Max allowed initial distance to left edge when you begin the interactive pop
-/// gesture. 0 by default, which means it will ignore this limit.
-@property (nonatomic, assign) CGFloat fd_interactivePopMaxAllowedInitialDistanceToLeftEdge;
 
 @end
